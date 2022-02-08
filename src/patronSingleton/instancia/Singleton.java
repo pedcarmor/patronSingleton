@@ -1,8 +1,11 @@
 package patronSingleton.instancia;
 
+import persona.Person;
+
+//SE UTILIZA PARA CREAR SIEMPRE EL MISMO OBJETO AL INICIO DE LA EJECUCIÓN
 public class Singleton {
 
-	private static Singleton instancia;
+	private static Person instancia;
 	private String nombre;
 	
 	private Singleton(String nombre) {
@@ -10,21 +13,12 @@ public class Singleton {
 		System.out.println("Mi nombre es "+this.nombre);
 	}
 	
-	public static Singleton getSingletonInstancia(String nombre) {
+
+	public static Person getInstancia() {
 		if(instancia==null) {
-			instancia=new Singleton(nombre);
-		}else {
-			System.out.println("No se puede crear el objeto "+nombre);
+			instancia=new Person();
 		}
 		return instancia;
-	}
-
-	public static Singleton getInstancia() {
-		return instancia;
-	}
-
-	public static void setInstancia(Singleton instancia) {
-		Singleton.instancia = instancia;
 	}
 
 	public String getNombre() {
